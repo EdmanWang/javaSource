@@ -9,6 +9,7 @@ import java.lang.reflect.Method;
 public class ObjectDemo {
 
     public static void main(String[] args) {
+        System.out.println("1111");
         // 创建一个对象
         Person person = new Person();
         // 得到一个class对象
