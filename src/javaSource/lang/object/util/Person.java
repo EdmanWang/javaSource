@@ -1,4 +1,4 @@
-package lang.object.util;
+package javaSource.lang.object.util;
 
 // 用于验证 getClass() 方法
 public class Person implements Cloneable{

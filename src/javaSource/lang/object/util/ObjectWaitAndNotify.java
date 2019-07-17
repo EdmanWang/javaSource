@@ -1,4 +1,4 @@
-package lang.object.util;
+package javaSource.lang.object.util;
 
 // 测试object基类的 wait 方法和notify 和notifyAll 方法
 public class ObjectWaitAndNotify {

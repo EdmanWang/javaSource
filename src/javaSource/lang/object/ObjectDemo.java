@@ -1,7 +1,7 @@
-package lang.object;
+package javaSource.lang.object;
 
-import lang.object.util.ObjectWaitAndNotify;
-import lang.object.util.Person;
+import javaSource.lang.object.util.ObjectWaitAndNotify;
+import javaSource.lang.object.util.Person;
 import org.junit.Test;
 
 import java.lang.reflect.Constructor;
