@@ -1,0 +1,4 @@
+package javaSource.lang.javaClass.util;
+
+public interface User {
+}
