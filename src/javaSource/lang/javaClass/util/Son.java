@@ -1,4 +1,4 @@
 package javaSource.lang.javaClass.util;
 
-public class Son {
+public class Son extends Person{
 }
