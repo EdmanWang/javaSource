@@ -1,4 +1,4 @@
-package javaSource.io.outputstream.filterOutputStream;
+package javaSource.io.byteStream.outputstream.filterOutputStream;
 
 // BufferedOutputStream 测试demo
 // 写入缓冲流

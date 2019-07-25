@@ -1,4 +1,4 @@
-package javaSource.io.outputstream.filterOutputStream;
+package javaSource.io.byteStream.outputstream.filterOutputStream;
 
 // 字符打印流
 

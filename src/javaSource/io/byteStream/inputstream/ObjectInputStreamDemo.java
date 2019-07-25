@@ -1,6 +1,6 @@
-package javaSource.io.inputstream;
+package javaSource.io.byteStream.inputstream;
 
-import javaSource.io.inputstream.util.Person;
+import javaSource.io.byteStream.inputstream.util.Person;
 import org.junit.Test;
 
 import java.io.File;

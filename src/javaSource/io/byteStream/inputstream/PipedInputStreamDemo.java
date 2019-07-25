@@ -1,6 +1,6 @@
-package javaSource.io.inputstream;
+package javaSource.io.byteStream.inputstream;
 
-import javaSource.io.inputstream.util.PipedInputStreamImpl;
+import javaSource.io.byteStream.inputstream.util.PipedInputStreamImpl;
 import javaSource.io.outputstream.util.PipedOutputStreamImpl;
 import org.junit.Test;
 

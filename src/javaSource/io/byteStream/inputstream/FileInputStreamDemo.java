@@ -1,4 +1,4 @@
-package javaSource.io.inputstream;
+package javaSource.io.byteStream.inputstream;
 
 import org.junit.Test;
 

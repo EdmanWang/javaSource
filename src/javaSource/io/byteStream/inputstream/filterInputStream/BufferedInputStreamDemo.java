@@ -1,4 +1,4 @@
-package javaSource.io.inputstream.filterInputStream;
+package javaSource.io.byteStream.inputstream.filterInputStream;
 
 // BufferedInputStream 测试demo
 

@@ -1,4 +1,4 @@
-package javaSource.io.outputstream.util;
+package javaSource.io.byteStream.outputstream.util;
 
 import java.io.IOException;
 import java.io.PipedInputStream;
