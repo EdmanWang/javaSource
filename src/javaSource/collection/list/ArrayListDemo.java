@@ -87,9 +87,21 @@ public class ArrayListDemo {
 
     @Test
     public void test(){
-        personList = new ArrayList<>();
+        List<Person> personList = new ArrayList<>();
         personList.add(new Person("wgx",24));
         personList.add(new Person("qaz",25));
+        personList.stream().map((person) -> {
+            boolean flag = true;
+            if (flag) {
+                if (person.getAge() == 25) {
+                    return false;
+                }
+            }
+            return true;
+        }).forEach((str)->{
+            System.out.println(str);
+        });
+
 
         Iterator<Person> iterator = personList.iterator();
         iterator.forEachRemaining(new Consumer<Person>() {
@@ -126,6 +138,6 @@ public class ArrayListDemo {
         boolean b = personList.containsAll(personList1);  // 底层是比较hash值，即使：比较对象的equals 方法
         System.out.println(b);
 
-//        personList1.set() 将新元素代替老元素，并返回老元素
+        //personList1.set() //将新元素代替老元素，并返回老元素
     }
 }
