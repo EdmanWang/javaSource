@@ -1,5 +1,6 @@
 package javaSource.lang.object;
 
+import javaSource.lang.classLoader.util.CustomerClassLoader;
 import javaSource.lang.object.util.ObjectWaitAndNotify;
 import javaSource.lang.object.util.Person;
 import org.junit.Test;
@@ -10,16 +11,21 @@ import java.lang.reflect.Method;
 
 public class ObjectDemo implements Cloneable {
 
-    Person person = new Person();
-
     @Test  // 测试getClass 方法
-    public void testGetClassMethod() {
-        // 得到一个class对象
+    public void testGetClassMethod() throws ClassNotFoundException {
+        Person person = new Person();
+        // 得到一个class对象,通过字节码文件，得到一个class对象
         Class<? extends Person> personClass = person.getClass();
+
+        ClassLoader classLoader1 = person.getClass().getClassLoader();
+        System.out.println(classLoader1);
+
+        ClassLoader classLoader2 = Class.forName("javaSource.lang.object.util.Person").getClassLoader();
+        System.out.println(classLoader2);
 
         // 通过的到的class对象，做相关操作。
 
-        ClassLoader classLoader = personClass.getClassLoader();
+        ClassLoader classLoader = personClass.getClassLoader(); // 默认加载的[类加载器]classLoader 是appClassLoader
         System.out.println("ClassLoader ----->" + classLoader);
 
         // 得到person类声明的全部字段
@@ -59,16 +65,16 @@ public class ObjectDemo implements Cloneable {
         Person person1 = new Person("1", "wgx");
         Person person2 = new Person("1", "wgx");
         // 当没有重写 equals 的时候，结果是false
-        // 当有重写 equals 的时候，结果是true
+        // 当有重写 equals 的时候，结果是true, 因为没有重写的时候，比较的是对象的hashCode
         System.out.println("person1 isEquals person2...." + person1.equals(person2));
     }
 
     @Test // 测试 clone 方法 首先需要实现Cloneable 接口
     public void testCloneMethod() throws CloneNotSupportedException {
         ObjectDemo objectDemo = new ObjectDemo();
-        Object clone = objectDemo.clone();
-        if (clone != objectDemo) {
-            System.out.println("test----" + clone);
+        ObjectDemo clone = (ObjectDemo) objectDemo.clone();
+        if (clone != objectDemo) { // clone 出来的对象是不同的两个对象
+            System.out.println("test---clone-" + clone);
             System.out.println("true");
         }
         if (clone.getClass() == objectDemo.getClass()) { // clone出来的对象的class对象是相等的
@@ -83,8 +89,8 @@ public class ObjectDemo implements Cloneable {
 
     }
 
-    @Test // 测试 wait notify notifyAll 方法
-    public void testWaitAndBNotifyAll() {
+    //    @Test // 测试 wait notify notifyAll 方法
+    public static void testWaitAndBNotifyAll() {
         ObjectWaitAndNotify objectWaitAndNotify = new ObjectWaitAndNotify();
 
         Thread threadOne = new Thread(() -> {
@@ -113,6 +119,10 @@ public class ObjectDemo implements Cloneable {
         threadOne.start();
         threadTwo.start();
         threadThree.start();
+    }
+
+    public static void main(String[] args) {
+        testWaitAndBNotifyAll();
     }
 }
 

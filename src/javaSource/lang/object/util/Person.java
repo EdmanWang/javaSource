@@ -33,11 +33,17 @@ public class Person implements Cloneable{
 
     @Override  // 如果需要需要比较两个对象的值，则是需要重写类的equals 方法
     public boolean equals(Object obj) {
+        super.equals(obj);
         Person person = (Person) obj;
         if (this.id.equals(person.id)) {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 
     @Override
