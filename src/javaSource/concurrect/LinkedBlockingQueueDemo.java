@@ -11,5 +11,7 @@ public class LinkedBlockingQueueDemo {
     public void test() throws InterruptedException {
         LinkedBlockingQueue linkedBlockingQueue = new LinkedBlockingQueue();
         linkedBlockingQueue.put("wgx");
+        Object take = linkedBlockingQueue.take();
+        System.out.println(take);
     }
 }

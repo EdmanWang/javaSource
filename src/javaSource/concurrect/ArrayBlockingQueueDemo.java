@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
-// ArrayBlockingQueue 测试 demo
+// ArrayBlockingQueue 【数组阻塞队列】测试 demo
 public class ArrayBlockingQueueDemo {
 
     @Test
@@ -29,8 +29,8 @@ public class ArrayBlockingQueueDemo {
     public static void main(String[] args) {
         BlockingQueue<String> blockingQueue = new ArrayBlockingQueue(1024);
 
-        Producter producter = new Producter(blockingQueue);
-        Consumer consumer = new Consumer(blockingQueue);
+        Producter producter = new Producter(blockingQueue);  // 向队列中添加数组
+        Consumer consumer = new Consumer(blockingQueue);// 从队列中拿取，进行消费
 
         producter.start();
         consumer.start();

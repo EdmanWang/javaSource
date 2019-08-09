@@ -21,9 +21,9 @@ public class DelayQueueDemo {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        DelayQueue delayQueue = new DelayQueue<Message>();
+        DelayQueue delayQueue = new DelayQueue<Message>();  // Message 延时消息体 必须实现Delayed 接口
 
-        delayQueue.put(new Message(1,"qaz",2000));
+        delayQueue.put(new Message(1,"qaz",10));
         delayQueue.put(new Message(2,"wgx",5000));
         delayQueue.put(new Message(3,"123",8000));
 
